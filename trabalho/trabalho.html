@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trablho.css">
+    <link rel="stylesheet" href="acesso.js">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>ACESSO DE FUNCIONÁRIOS</h1> 
+        <label for="cardNumber">número do cartão de identificação:</label> 
+        <input type="text" id="cardNumber"> 
+        <button onclick="verificarAcesso()">Verificar Acesso</button>
+    <p id="resultadoAcesso"></p>
+    <script>
+     function verificarAcesso() { const numerocartao = parseInt(document.getElementById('cardNumber').value);
+     let mensagemAcesso = ''; if (numerocartao >= 1000 && numerocartao <= 1999)
+      { mensagemAcesso = 'Acesso total a todas as áreas restritas permitido.'; }
+       else if (numerocartao >= 2000 && numerocartao <= 2999) { mensagemAcesso = 'Acesso limitado a algumas áreas restritas permitido.'; }
+        else if (numerocartao > 3000) { mensagemAcesso = 'Acesso negado. Não é permitido acessar as áreas restritas.'; }
+         else { mensagemAcesso = 'Número de cartão inválido. Verifique o número digitado.'; }
+          document.getElementById('resultadoAcesso').innerText = mensagemAcesso;
+          } 
+    </script>
+    </div>
+
+</body>
+</html>
